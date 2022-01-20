@@ -7,7 +7,7 @@ import App from "./components/App";
 
 // wrap app in providers
 const Application = () => (
-  <IdentityContextProvider url="http://kind-wright-3d6660.netlify.app">
+  <IdentityContextProvider url="https://kind-wright-3d6660.netlify.app">
     <App />
   </IdentityContextProvider>
 );
