@@ -1,0 +1,43 @@
+{
+  "name": "rnw-starter-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist",
+    "webpack": "webpack",
+    "webpack-dev-server": "webpack-dev-server",
+    "start": "yarn clean && yarn webpack-dev-server --mode development --hot",
+    "start:docker": "yarn start -- --host 0.0.0.0",
+    "build": "yarn clean && yarn webpack --mode production",
+    "build:analyze": "yarn build --env presets=analyze",
+    "build:compress": "yarn build --env presets=compress",
+    "test": "jest",
+    "test:local": "yarn test --watch --coverage",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.2.3",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-plugin-react-native-web": "^0.17.5",
+    "compression-webpack-plugin": "^4.0.0",
+    "eslint": "^7.0.0",
+    "eslint-plugin-react": "^7.20.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^26.0.1",
+    "webpack": "^5.66.0",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.3",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-native-web": "^0.12.2"
+  }
+}
