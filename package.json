@@ -36,8 +36,12 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "prop-types": "^15.8.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-native-web": "^0.12.2"
+    "react-native-web": "^0.12.2",
+    "react-netlify-identity": "^0.2.5",
+    "react-router-dom": "^6.2.1",
+    "regenerator-runtime": "^0.13.9"
   }
 }
