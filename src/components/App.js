@@ -6,19 +6,34 @@ import PrivateRoute from "./PrivateRoute";
 
 import * as RouteComponents from "./Routes";
 
+// <Suspense fallback={<ActivityIndicator size="large" />}>
+
 export default function App() {
   return (
     <Router>
-      <Suspense fallback={<ActivityIndicator size="large" />}>
-        <View style={styles.container}>
-          <Routes>
-            <Route exact path="/" element={<PrivateRoute />}>
-              <Route exact path="/" element={RouteComponents.HomePage} />
-            </Route>
-            <Route path={"/login"} element={RouteComponents.LoginPage} />
-          </Routes>
-        </View>
-      </Suspense>
+      <View style={styles.container}>
+        <Routes>
+          <Route exact path="/" element={<PrivateRoute />}>
+            <Route
+              exact
+              path="/"
+              element={
+                <Suspense fallback={<ActivityIndicator size="large" />}>
+                  <RouteComponents.HomePage />
+                </Suspense>
+              }
+            />
+          </Route>
+          <Route
+            path={"/login"}
+            element={
+              <Suspense fallback={<ActivityIndicator size="large" />}>
+                <RouteComponents.LoginPage />
+              </Suspense>
+            }
+          />
+        </Routes>
+      </View>
     </Router>
   );
 }
